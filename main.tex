@@ -1,0 +1,248 @@
+%===================================================================================================
+%  Minimal & Clean CV Template
+%  Template by: Emamul Islam Nadid
+%  Contact: ein.nadid@gmail.com | https://einadid.vercel.app
+%===================================================================================================
+
+\documentclass[9pt,a4paper]{article}
+
+%---------------------------------------------------------------------------------------------------
+% PACKAGES
+%---------------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{raleway}
+\usepackage{moresize}
+\usepackage{xifthen}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage[a4paper]{geometry}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+
+%---------------------------------------------------------------------------------------------------
+% PAGE LAYOUT
+%---------------------------------------------------------------------------------------------------
+\geometry{top=1.0cm, bottom=0.6cm, left=1.4cm, right=1.4cm}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\renewcommand{\familydefault}{\sfdefault}
+
+%---------------------------------------------------------------------------------------------------
+% COLORS
+%---------------------------------------------------------------------------------------------------
+\definecolor{accent}{RGB}{50, 90, 150}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{medgray}{RGB}{120, 120, 120}
+\definecolor{lightgray}{RGB}{225, 225, 225}
+
+%---------------------------------------------------------------------------------------------------
+% HYPERLINK SETUP
+%---------------------------------------------------------------------------------------------------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+%---------------------------------------------------------------------------------------------------
+% CUSTOM COMMANDS
+%---------------------------------------------------------------------------------------------------
+
+% Section title
+\newcommand{\cvsection}[1]{%
+  \vspace{4pt}
+  {\normalsize\textbf{\textcolor{accent}{\uppercase{#1}}}}\\[-5pt]
+  {\color{accent}\rule{\linewidth}{1.0pt}}
+  \vspace{1pt}
+}
+
+% CV Event
+\newcommand{\cvevent}[3]{%
+  \vspace{1pt}
+  \noindent
+  \textbf{\textcolor{darkgray}{\small #2}}%
+  \hfill%
+  \textcolor{medgray}{\scriptsize #1}\\[-5pt]
+  \noindent\textcolor{accent}{\scriptsize #3}%
+  \vspace{1pt}%
+  \\[-2pt]{\color{lightgray}\rule{\linewidth}{0.4pt}}
+  \vspace{0pt}
+}
+
+% CV Detail — fixed alignment with tabularx
+\newcommand{\cvdetail}[1]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{\hspace{4pt}}p{0.015\linewidth}@{\hspace{4pt}}X@{}}
+    \textcolor{accent}{\scriptsize$\bullet$} & \textcolor{darkgray}{\scriptsize #1}
+  \end{tabularx}
+  \vspace{-3pt}
+}
+
+% Skill tag
+\newcommand{\skilltag}[1]{%
+  \colorbox{lightgray}{\scriptsize\textcolor{darkgray}{\textbf{#1}}}%
+  \hspace{1pt}%
+}
+
+% Meta info row
+\newcommand{\metarow}[2]{%
+  \textcolor{accent}{#1}\hspace{3pt}{\small\textcolor{darkgray}{#2}}\hspace{8pt}%
+}
+
+%===================================================================================================
+% DOCUMENT START
+%===================================================================================================
+\begin{document}
+
+%---------------------------------------------------------------------------------------------------
+% HEADER
+%---------------------------------------------------------------------------------------------------
+\begin{minipage}[t]{0.72\linewidth}
+  \vspace{0pt}
+  {\HUGE\textbf{\textcolor{darkgray}{John William }}\textbf{\textcolor{accent}{Carter}}}\\[3pt]
+  {\normalsize\textcolor{medgray}{Full Stack Developer \& UI/UX Designer}}\\[6pt]
+  \metarow{\faEnvelope}{\href{mailto:john.carter@email.com}{john.carter@email.com}}%
+  \hspace{18pt}\metarow{\faPhone}{\href{tel:+15551234567}{+1 (555) 123-4567}}\\[4pt] %for alignment edit {--pt}
+  \hspace{2pt}\metarow{\faLinkedin}{\href{https://www.linkedin.com/in/johncarter}{linkedin.com/in/johncarter}}%
+  \hspace{2pt}\metarow{\faGithub}{\href{https://github.com/einadid}{github.com/johncarter}}\\[4pt] %for alignment edit {--pt}
+  \hspace{2pt}\metarow{\faGlobe}{\href{https://johncarter.dev}{johncarter.dev}}%
+  \hspace{55pt}\metarow{\faMapMarker*}{New York, USA} %for alignment edit {--pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.23\linewidth}
+  \vspace{0pt}
+  \begin{flushright}
+    \begin{tikzpicture}
+      \clip (0,0) circle (1.2cm);
+      \node at (0,0) {\includegraphics[width=2.4cm]{photo.jpg}};
+      \draw[accent, line width=1.2pt] (0,0) circle (1.2cm);
+    \end{tikzpicture}
+  \end{flushright}
+\end{minipage}
+
+%---------------------------------------------------------------------------------------------------
+% SUMMARY
+%---------------------------------------------------------------------------------------------------
+\vspace{3pt}
+\cvsection{Summary}
+\noindent{\scriptsize\textcolor{darkgray}{%
+Full stack developer and UI/UX designer with \textbf{4+ years} of professional experience 
+building scalable web applications and crafting intuitive user interfaces. Worked at 
+\textbf{Acme Corp} and delivered freelance projects for clients across multiple industries. 
+Pursuing B.Sc. in Computer Science with strong skills in Next.js, Node.js, and cloud deployment.%
+}}
+
+%---------------------------------------------------------------------------------------------------
+% EXPERIENCE
+%---------------------------------------------------------------------------------------------------
+\cvsection{Experience}
+\cvevent{2022 -- 2024}{Full Stack Developer}{Acme Corporation $\cdot$ Full-time}
+\cvdetail{Built and maintained customer-facing web applications serving over 50,000 monthly active users.}
+\cvdetail{Led front-end development using React and TypeScript, improving page load time by 40\%.}
+\cvdetail{Collaborated with design and product teams to implement accessible, responsive UI components.}
+
+\cvevent{2020 -- Present}{Freelance Web Developer}{Self-employed $\cdot$ Remote}
+\cvdetail{Delivered 20+ client projects including e-commerce stores, portfolios, and SaaS dashboards.}
+\cvdetail{Managed client communication, requirement gathering, delivery, and post-launch support.}
+
+%---------------------------------------------------------------------------------------------------
+% SKILLS
+%---------------------------------------------------------------------------------------------------
+\cvsection{Skills}
+\begin{minipage}[t]{0.48\linewidth}
+  \textcolor{medgray}{\scriptsize\textbf{PROFICIENT}}\\[2pt]
+  \skilltag{Next.js} \skilltag{TypeScript} \skilltag{Tailwind CSS}\\[3pt]
+  \skilltag{Figma} \skilltag{Node.js} \skilltag{PostgreSQL}\\[3pt]
+  \textcolor{medgray}{\scriptsize\textbf{FAMILIAR}}\\[2pt]
+  \skilltag{Python} \skilltag{Docker} \skilltag{AWS} \skilltag{MongoDB} \skilltag{Git}\\[3pt]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \textcolor{medgray}{\scriptsize\textbf{SOFT SKILLS}}\\[2pt]
+  \skilltag{Client Communication} \skilltag{Time Management}\\[3pt]
+  \skilltag{Team Collaboration} \skilltag{Problem Solving}\\[3pt]
+  \textcolor{medgray}{\scriptsize\textbf{INTERESTS}}\\[2pt]
+  \skilltag{Web Development} \skilltag{UI/UX} \skilltag{AI}
+\end{minipage}
+
+%---------------------------------------------------------------------------------------------------
+% PROJECTS
+%---------------------------------------------------------------------------------------------------
+\cvsection{Projects}
+\begin{minipage}[t]{0.48\linewidth}
+  \cvevent{2024}{ShopEase — E-commerce Platform}{\href{https://shopease.demo.com}{shopease.demo.com} $\cdot$ Next.js, TS, MongoDB}
+  \cvdetail{Full-stack e-commerce with product management, cart, auth, and order processing.}
+
+  \cvevent{2024}{TaskFlow — Project Manager}{\href{https://taskflow.demo.com}{taskflow.demo.com} $\cdot$ React, Node.js, PostgreSQL}
+  \cvdetail{Real-time task tracking with team collaboration, roles, and deadline notifications.}
+
+  \cvevent{2023}{MediBook Clinic App}{\href{https://medibook.demo.com}{medibook.demo.com} $\cdot$ PHP, MySQL}
+  \cvdetail{Patient booking, prescription management, and billing system for a local clinic.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \cvevent{2023}{Brand Identity — DemoClient}{\href{https://behance.net}{Behance Portfolio} $\cdot$ Graphic Design}
+  \cvdetail{Logos, color palettes, typography, and full brand guidelines for the client.}
+
+  \cvevent{2024}{Personal Portfolio}{\href{https://johncarter.dev/projects}{johncarter.dev} $\cdot$ Next.js}
+  \cvdetail{Curated portfolio of web experiments and creative front-end projects with live demos.}
+\end{minipage}
+
+%---------------------------------------------------------------------------------------------------
+% EDUCATION & CERTIFICATIONS
+%---------------------------------------------------------------------------------------------------
+\cvsection{Education \& Certifications}
+\begin{minipage}[t]{0.48\linewidth}
+  \textcolor{medgray}{\scriptsize\textbf{EDUCATION}}\\[2pt]
+  \cvevent{2021 -- Present}{B.Sc. in Computer Science}{\href{https://university.edu}{State University of New York}}
+  \cvdetail{Data Structures, Algorithms, OOP, Database Systems, Software Engineering.}
+
+  \cvevent{2019 -- 2021}{Higher Secondary Certificate}{\href{https://school.edu}{Lincoln High School, New York}}
+  \cvdetail{Mathematics, Physics, and Computer Applications.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \textcolor{medgray}{\scriptsize\textbf{CERTIFICATIONS}}\\[2pt]
+  \cvevent{2022}{Full Stack Web Development}{\href{https://coursera.org}{Coursera $\cdot$ Meta Professional Certificate}}
+  \cvdetail{React, Node.js, MongoDB, REST APIs, and deployment workflows.}
+
+  \cvevent{2023}{AWS Cloud Practitioner}{\href{https://aws.amazon.com/certification/}{Amazon Web Services}}
+  \cvdetail{Cloud fundamentals, core AWS services, security, and pricing models.}
+\end{minipage}
+
+%---------------------------------------------------------------------------------------------------
+% LANGUAGES & ACTIVITIES
+%---------------------------------------------------------------------------------------------------
+\cvsection{Languages \& Activities}
+\begin{minipage}[t]{0.48\linewidth}
+  \skilltag{English — Native}\hspace{3pt}
+  \skilltag{Spanish — Professional}\hspace{3pt}
+  \skilltag{French — Conversational}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \skilltag{Basketball}\hspace{2pt}
+  \skilltag{Photography}\hspace{2pt}
+  \skilltag{Reading}\hspace{2pt}
+  \skilltag{Music}
+\end{minipage}
+
+\end{document}
+
+%===================================================================================================
+%  HOW TO USE THIS TEMPLATE
+%  1. Replace all demo text with your own information
+%  2. Upload your photo as photo.jpg to the Overleaf project
+%  3. Adjust accent color RGB values in the COLORS section
+%  4. Compile with XeLaTeX or pdfLaTeX on Overleaf
+%
+%  Template designed by Emamul Islam Nadid
+%  ein.nadid@gmail.com | https://einadid.vercel.app
+%===================================================================================================
