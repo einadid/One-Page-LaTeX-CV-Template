@@ -7,8 +7,6 @@ Designed for students, developers, designers, and job seekers who want a profess
 
 ![CV Preview](./preview.png)
 
-> If the preview image does not show, upload a screenshot of your CV as `preview.png` in the root of this repository.
-
 ## Features
 
 - Clean and minimal one-page layout
